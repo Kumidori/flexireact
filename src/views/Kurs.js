@@ -1,0 +1,48 @@
+import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import { Link } from 'react-router-dom'
+
+const query = gql`
+query KursDetails($key:String){
+  Kurs(key:$key) {
+    displayName,
+    authors,
+    description,
+    key
+  }
+  Folders(courseKey:$key){
+    detailsName,
+    courseNodeId,
+    name
+  }
+}
+`;
+
+class Kurs extends Component {
+    render(){
+        let {data} = this.props;
+        if(data.loading) return <div>Loading..</div>;
+        return(
+            <div className="row">
+                    <div>
+                    <p>{data.Kurs.displayName}</p>
+                    <p>{data.Kurs.description.replace(/<p>/g,"").replace(/<\/p>/g,"")}</p>
+                    <Link to={`/Kurs/${data.Kurs.key}/Files/${data.Folders.courseNodeId}`}>
+                         <p>{data.Folders.detailsName}</p>
+                    </Link>
+                    </div>
+            </div>
+        );
+    }
+}
+const queryOptions = {
+    options: props => ({
+        variables: {
+            key: props.match.params.id
+        }
+    })
+};
+
+
+export default Kurs = graphql(query, queryOptions)(Kurs)
