@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './views/Home';
+import Kataloge from './views/Katalog';
 import Kurs from './views/Kurs';
 import Files from './views/Files';
 import SubFiles from './views/SubFiles';
+import Navbar from './views/Navbar';
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -23,7 +25,9 @@ class App extends Component {
     <ApolloProvider client={client}>
         <Router>
             <div>
+                <Navbar/>
                 <Route exact path="/" component={Home}/>
+                <Route exact path="/Katalog" component={Kataloge}/>
                 <Route exact path="/Kurs/:id/" component={Kurs}/>
                 <Route exact path="/Kurs/:id/Files/:nodeId" component={Files}/>
                 <Route  path="/Kurs/:id/Files/:nodeId/:title/" component={SubFiles}/>
