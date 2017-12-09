@@ -41,7 +41,7 @@ class Kurs extends Component {
             <div className="row">
                     <div>
                     <p>{data.Kurs.displayName}</p>
-                    <p>{data.Kurs.description.replace(/<p>/g,"").replace(/<\/p>/g,"")}</p>
+                    <p dangerouslySetInnerHTML={{ __html: data.Kurs.description }}/>
                     <Link to={`/Kurs/${data.Kurs.key}/Files/${data.Folders.courseNodeId}`}>
                          <p>{data.Folders.detailsName}</p>
                     </Link>

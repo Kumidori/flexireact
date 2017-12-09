@@ -30,7 +30,11 @@ class Forum extends Component {
                                 <div className="card-content white-text">
                                     <span className="card-title">{Post.title}</span>
                                     <p>Author: {Post.author}</p>
-                                    <p>Nachricht: {Post.body}</p>
+
+                                    <p>
+                                        Nachricht:
+                                        <span dangerouslySetInnerHTML={{ __html: Post.body }}/>
+                                    </p>
                                 </div>
                             </div>
                         </div>
