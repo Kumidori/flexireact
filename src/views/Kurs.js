@@ -16,6 +16,11 @@ query KursDetails($key:String){
     courseNodeId,
     name
   }
+  Forum(courseKey: $key) {
+    courseNodeId,
+    detailsName,
+    subscribed
+  }
 }
 `;
 
@@ -23,6 +28,15 @@ class Kurs extends Component {
     render(){
         let {data} = this.props;
         if(data.loading) return <div>Loading..</div>;
+        let forumLink = null;
+        if(data.Forum) {
+            forumLink = (
+                <Link to={`/Forum/${data.Kurs.key}/nodeId/${data.Forum.courseNodeId}`}>
+                    <p>{data.Forum.detailsName}</p>
+                </Link>
+            );
+        }
+
         return(
             <div className="row">
                     <div>
@@ -31,6 +45,8 @@ class Kurs extends Component {
                     <Link to={`/Kurs/${data.Kurs.key}/Files/${data.Folders.courseNodeId}`}>
                          <p>{data.Folders.detailsName}</p>
                     </Link>
+
+                        {forumLink}
                     </div>
             </div>
         );

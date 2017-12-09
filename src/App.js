@@ -6,6 +6,7 @@ import Kurs from './views/Kurs';
 import Files from './views/Files';
 import SubFiles from './views/SubFiles';
 import Navbar from './views/Navbar';
+import Forum from './views/Forum'
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route exact path="/Katalog" component={Kataloge}/>
                 <Route exact path="/Kurs/:id/" component={Kurs}/>
                 <Route exact path="/Kurs/:id/Files/:nodeId" component={Files}/>
+                <Route exact path="/Forum/:id/nodeId/:nodeId" component={Forum}/>
                 <Route  path="/Kurs/:id/Files/:nodeId/:title/" component={SubFiles}/>
             </div>
         </Router>
