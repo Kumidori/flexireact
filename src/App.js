@@ -6,6 +6,7 @@ import Kurs from './views/Kurs';
 import Files from './views/Files';
 import SubFiles from './views/SubFiles';
 import Navbar from './views/Navbar';
+import Verzeichnis from './views/Verzeichnis';
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';

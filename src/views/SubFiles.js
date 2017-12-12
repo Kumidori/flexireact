@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom'
+import Verzeichnis from './Verzeichnis';
+
 
 const query = gql`
   query Files($href: String) {
@@ -21,22 +23,8 @@ class SubFiles extends Component {
         console.log(this.props.match.params);
         if(data.loading) return <div>Loading..</div>;
         return(
-            <div className="row">
-                {data.Files.map((File) => (
-                    <Link to={`/Kurs/${this.props.match.params.id}/Files/${this.props.match.params.nodeId}/${this.props.match.params.title}/${File.title}`}>
-                    <div className="col s12 m6">
-                        <div className="card blue-grey darken-1">
-                            <div className="card-content white-text">
-                                <span className="card-title">{File.title}</span>
-                                <p>{File.href}</p>
-                                <p>{File.size || "Ordner"}</p>
-                            </div>
-                        </div>
-                    </div>
-                    </Link>
-                ))}
-            </div>
-        );
+        <Verzeichnis datafiles={data}/>
+        )
     }
 }
 const queryOptions = {
