@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar';
+import Topbar from '../components/Topbar';
+import Titlebar from "../components/Titlebar";
+import Coursebar from "../components/Coursebar";
 
 const query = gql`
 query KursDetails($key:String){
@@ -28,25 +32,14 @@ class Kurs extends Component {
     render(){
         let {data} = this.props;
         if(data.loading) return <div>Loading..</div>;
-        let forumLink = null;
-        if(data.Forum) {
-            forumLink = (
-                <Link to={`/Forum/${data.Kurs.key}/nodeId/${data.Forum.courseNodeId}`}>
-                    <p>{data.Forum.detailsName}</p>
-                </Link>
-            );
-        }
 
         return(
             <div className="row">
+                <Titlebar title={data.Kurs.displayName}/>
+                <Coursebar courseKey={data.Kurs.key} nodeId={data.Folders.courseNodeId} forumId={data.Forum.courseNodeId}/>
                     <div>
                     <p>{data.Kurs.displayName}</p>
                     <p dangerouslySetInnerHTML={{ __html: data.Kurs.description }}/>
-                    <Link to={`/Kurs/${data.Kurs.key}/Files/${data.Folders.courseNodeId}`}>
-                         <p>{data.Folders.detailsName}</p>
-                    </Link>
-
-                        {forumLink}
                     </div>
             </div>
         );

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom'
+import Titlebar from "../components/Titlebar";
+import Coursebar from "../components/Coursebar";
 
 const query = gql`
   query Posts($courseKey: String, $courseNodeId: String) {
@@ -12,6 +14,22 @@ const query = gql`
         body,
         author
       }
+       Kurs(key:$courseKey) {
+            displayName,
+            authors,
+            description,
+            key
+          }
+          Folders(courseKey:$courseKey){
+            detailsName,
+            courseNodeId,
+            name
+          }
+          Forum(courseKey: $courseKey) {
+            courseNodeId,
+            detailsName,
+            subscribed
+          }
     }
 `;
 
@@ -23,10 +41,11 @@ class Forum extends Component {
         if(data.loading) return <div>Loading..</div>;
         return(
             <div className="row center">
-                <h1>Forum</h1>
+                <Titlebar title={data.Kurs.displayName}/>
+                <Coursebar courseKey={data.Kurs.key} nodeId={data.Folders.courseNodeId} forumId={data.Forum.courseNodeId}/>
                 {data.Posts.map((Post) => (
                         <div className="col s12 m6">
-                            <div className="card blue-grey darken-1">
+                            <div className="card light-green darken-3">
                                 <div className="card-content white-text">
                                     <span className="card-title">{Post.title}</span>
                                     <p>Author: {Post.author}</p>
