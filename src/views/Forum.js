@@ -46,14 +46,17 @@ class Forum extends Component {
                 {data.Posts.map((Post) => (
                         <div className="col s12 m6">
                             <div className="card light-green darken-3">
+                            <i class="material-icons left white-text">chat_bubble_outline</i>
                                 <div className="card-content white-text">
+                                    
                                     <span className="card-title">{Post.title}</span>
-                                    <p>Author: {Post.author}</p>
-
                                     <p>
                                         Nachricht:
                                         <span dangerouslySetInnerHTML={{ __html: Post.body }}/>
                                     </p>
+                                </div>
+                                <div className="card-action white-text">
+                                    <p>Author: {Post.author}</p>
                                 </div>
                             </div>
                         </div>
