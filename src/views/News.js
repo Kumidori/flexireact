@@ -5,31 +5,34 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import Topbar from '../components/Topbar';
 import $ from "jquery";
-// var $ = require ('jquery')
-
-{/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> */}
 
 
-$.get('https://cors-anywhere.herokuapp.com/https://felix.hs-furtwangen.de/rss/personal/beckerth.hfu/XLZrRj/olat.rss', function (data) {
-  // console.log(data);
-  $(data).find("item").each(function () { // or "item" or whatever suits your feed
-  console.log(data);
-  var item = xml2json(this);
-  var title = item['title'];
-  var link = item['link'];
-  var description = item['description'];
-
-  var new_card = '<div class="card light-green darken-3"><i class="material-icons left white-text">chat_bubble_outline</i><div class="card-content white-text"><span class="card-title">'+title+'</span>'+description+'</div><div class="card-action white-text"><a class="white-text">Text anzeigen</a><Link to="/Forum/96536472673363/nodeId/96536472680149"><a class="right white-text">Zum Forum</a></Link></div></div>';
-  
-  var news_content = $('.col.s12.m6.testzugriffperjquery').html();
-  $('.col.s12.m6.testzugriffperjquery').html(news_content+new_card);
-//   console.log(news_content);
-  console.log(item);
 
 
-  
-  });
+// RSS FEED PER JQUERY HOLEN UND EINBAUEN
+
+$( document ).ready(function() {
+    $.get('https://cors-anywhere.herokuapp.com/https://felix.hs-furtwangen.de/rss/personal/beckerth.hfu/XLZrRj/olat.rss', function (data) {
+        $(data).find("item").each(function () {
+            console.log(this);
+            var item = xml2json(this);
+            var title = item['title'];
+            var link = item['link'];
+            var description = item['description'];
+            
+
+            var new_card = '<div class="card light-green darken-3"><i class="material-icons left white-text">chat_bubble_outline</i><div class="card-content white-text"><span class="card-title">'+title+'</span>'+description+'</div><div class="card-action white-text"><a class="white-text"></a><a href="'+link+'" class="right white-text">Link</a></div></div>';
+            
+            var news_content = $('.col.s12.m12.testzugriffperjquery').html();
+            $('.col.s12.m12.testzugriffperjquery').html(news_content+new_card);
+            console.log(link);
+        });
+    });
 });
+
+
+
+// Funktion ändert Rss-xml zu json
 
 function xml2json(xml) {
     try {
@@ -61,6 +64,10 @@ function xml2json(xml) {
   }
 
 
+
+
+
+
 export default class News extends Component {
 
 
@@ -69,7 +76,7 @@ export default class News extends Component {
             <div class="row center">
                 <Topbar/>
                 <Navbar/>
-                <div class="col s12 m6 testzugriffperjquery">
+                <div class="col s12 m12 testzugriffperjquery">
         </div>
 
             </div>
