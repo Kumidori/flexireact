@@ -34,6 +34,11 @@ const query = gql`
 `;
 
 class Forum extends Component {
+    truncate(string){
+        let length = 170;
+        if(string.length>length) return string.substring(0,length)+"...";
+        return string;
+    }
     render(){
         let {data} = this.props;
         console.log(data);
@@ -52,7 +57,7 @@ class Forum extends Component {
                                     <span className="card-title">{Post.title}</span>
                                     <p>
                                         Nachricht:
-                                        <span dangerouslySetInnerHTML={{ __html: Post.body }}/>
+                                        <span dangerouslySetInnerHTML={{ __html: this.truncate(Post.body) }}/>
                                     </p>
                                 </div>
                                 <div className="card-action white-text">
