@@ -17,7 +17,7 @@ $( document ).ready(function() {
 
     $.get('https://cors-anywhere.herokuapp.com/https://felix.hs-furtwangen.de/rss/personal/beckerth.hfu/XLZrRj/olat.rss', function (data) {
         $(data).find("item").each(function () {
-            console.log(this);
+            console.log(data);
             var item = xml2json(this);
             var title = item['title'];
             var link = item['link'];
@@ -32,18 +32,19 @@ $( document ).ready(function() {
                     var date_time=date_time[0];
                     var date= date_time.slice(0, 10);
                     var time= date_time.slice(11, 17);
+
+                    var link=element.split('href="');
+                    link=link[1].split('"');
+                    console.log(link);
                     
-                    // console.log(time);
-                    
+
                     var message=element.split(">");
                     var message=message[3].split("</a");
-                    // var message=message[0].split(" von ");
+
                     var autor=message[1];
                     var message=message[0];
-                    // console.log(message, autor);
+
                     eintraege.push([+date[3]+date[4]+" "+date[0]+date[1]+", "+ date[6]+date[7]+date[8]+date[9]+" "
-                    
-                    
                     +time[0]+time[1]+":"
                     +time[3]+time[4]+":00"
                     ,message,date,time,title]);
@@ -51,6 +52,7 @@ $( document ).ready(function() {
             }
             
         });
+
         console.log(eintraege);
         eintraege.sort(function(a, b) {
             var dateA = new Date(a[0]), dateB = new Date(b[0]);
@@ -61,11 +63,10 @@ $( document ).ready(function() {
         console.log(new Date("2018-02-03-T19:23:00Z"));
         eintraege.forEach(function(eintrag) {
             console.log(eintrag);
-            var new_card = '<div class="card light-green darken-3"><i class="material-icons left white-text">chat_bubble_outline</i><div class="card-content white-text"><span class="card-title">'+eintrag[2]+' '+eintrag[3]+' '+eintrag[4]+'</span>'+eintrag[1]+'</div><div class="card-action white-text"><a class="white-text"></a><a href="'+eintrag[0]+'" class="right white-text">Link</a></div></div>';
-            
+            var new_card = '<div class="card light-green darken-3"><i class="material-icons left white-text">chat_bubble_outline</i><div class="card-content white-text"><span class="card-title">'+eintrag[4]+'</span>'+eintrag[1]+'<br>'+eintrag[2]+' '+eintrag[3]+'</div></div>';
             var news_content = $('.col.s12.m12.testzugriffperjquery').html();
+            
             $('.col.s12.m12.testzugriffperjquery').html(news_content+new_card);
-            // console.log(link);
           });
     });
 
