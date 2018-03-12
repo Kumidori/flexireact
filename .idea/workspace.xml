@@ -85,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/views/Courses.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
-              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -396,7 +396,7 @@
       <workItem from="1514070073903" duration="14841000" />
       <workItem from="1515876439000" duration="20378000" />
       <workItem from="1517921571194" duration="2553000" />
-      <workItem from="1520843158271" duration="10876000" />
+      <workItem from="1520843158271" duration="11438000" />
     </task>
     <task id="LOCAL-00001" summary="added Katalog">
       <created>1512748771788</created>
@@ -447,11 +447,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520867822787</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added Veranstaltungen (Intranet)">
+      <created>1520867993348</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1520867993348</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89494000" />
+    <option name="totallyTimeSpent" value="90056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1934" height="1030" extended-state="0" />
@@ -912,7 +919,7 @@
     <entry file="file://$PROJECT_DIR$/src/views/Courses.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

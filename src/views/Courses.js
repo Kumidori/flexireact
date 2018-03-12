@@ -54,7 +54,7 @@ class Courses extends Component {
 
                     <ul class="collection">
                         <Link key={Kurs.id} to={`/Kurs/${Kurs.id}/`}>
-                            <li class="collection-item  light-green darken-3 white-text"><div>{Kurs.name}<span class="secondary-content"><i class="material-icons white-text">subdirectory_arrow_right</i></span></div></li>
+                            <li class="collection-item  light-blue darken-3 white-text"><div>{Kurs.name}<span class="secondary-content"><i class="material-icons white-text">subdirectory_arrow_right</i></span></div></li>
                         </Link>
                     </ul>
 
