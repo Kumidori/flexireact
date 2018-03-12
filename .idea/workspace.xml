@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1f07ecd-0835-4473-af13-23f36e78058e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/News.js" afterPath="$PROJECT_DIR$/src/views/News.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="News.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/News.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="434">
+              <caret line="39" column="70" lean-forward="false" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -63,8 +62,8 @@
       <file leaf-file-name="Kurs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Kurs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="341">
+              <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -395,7 +394,7 @@
       <workItem from="1514070073903" duration="14841000" />
       <workItem from="1515876439000" duration="20378000" />
       <workItem from="1517921571194" duration="2553000" />
-      <workItem from="1520843158271" duration="6319000" />
+      <workItem from="1520843158271" duration="8237000" />
     </task>
     <task id="LOCAL-00001" summary="added Katalog">
       <created>1512748771788</created>
@@ -425,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515893474086</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="News with graphql">
+      <created>1520860876394</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520860876394</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84937000" />
+    <option name="totallyTimeSpent" value="86855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1934" height="1030" extended-state="0" />
@@ -443,7 +449,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24004824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -465,7 +471,8 @@
     <MESSAGE value="added Forum" />
     <MESSAGE value="fixed html output" />
     <MESSAGE value="Designanpassungen, Dateilinks funktionsfähig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Designanpassungen, Dateilinks funktionsfähig" />
+    <MESSAGE value="News with graphql" />
+    <option name="LAST_COMMIT_MESSAGE" value="News with graphql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -837,16 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Kurs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Forums.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -883,10 +880,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Kurs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/News.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="434">
+          <caret line="39" column="70" lean-forward="false" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
