@@ -5,13 +5,18 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import Topbar from '../components/Topbar';
 const query = gql`
-{
+query{
     Kurse(userId:"77725698") {
     displayName,
     authors,
     description,
     key
   }
+ Veranstaltungen{
+  name
+  short
+  id
+}
 }
 `;
 
