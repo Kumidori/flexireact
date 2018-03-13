@@ -49,6 +49,7 @@ class Forum extends Component {
                 <Titlebar title={data.Kurs.displayName}/>
                 <Coursebar courseKey={data.Kurs.key} nodeId={data.Folders.courseNodeId} forumId={data.Forum.courseNodeId}/>
                 {data.Posts.map((Post) => (
+                    <Link key={Post.id} to={`/Forum/${data.Kurs.key}/nodeId/${data.Forum.courseNodeId}/messages/${Post.key}`}>
                         <div className="col s12 m6">
                             <div className="card light-green darken-3">
                             <i class="material-icons left white-text">chat_bubble_outline</i>
@@ -65,6 +66,7 @@ class Forum extends Component {
                                 </div>
                             </div>
                         </div>
+                    </Link>
                 ))}
             </div>
         );

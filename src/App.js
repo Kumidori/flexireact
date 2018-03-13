@@ -3,6 +3,7 @@ import './App.css';
 import Home from './views/Home';
 import Courses from './views/Courses';
 import Forums from './views/Forums';
+import Postings from './views/Postings';
 import News from './views/News';
 import Kataloge from './views/Katalog';
 import Kurs from './views/Kurs';
@@ -39,6 +40,7 @@ class App extends Component {
                 <Route exact path="/Kurs/:id/" component={Kurs}/>
                 <Route exact path="/Kurs/:id/Files/:nodeId" component={Files}/>
                 <Route exact path="/Forum/:id/nodeId/:nodeId" component={Forum}/>
+                <Route exact path="/Forum/:id/nodeId/:nodeId/messages/:key" component={Postings}/>
                 <Route  path="/Kurs/:id/Files/:nodeId/:title" component={SubFiles}/>
             </div>
         </Router>
